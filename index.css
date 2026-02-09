@@ -1,15 +1,15 @@
 /* -----------------------------
-   Global
+   Global Theme (Light + Green)
 ------------------------------ */
 :root {
-    --bg: #0b1020;
-    --card: rgba(255, 255, 255, 0.08);
-    --card-2: rgba(255, 255, 255, 0.12);
-    --text: #e9eefc;
-    --muted: rgba(233, 238, 252, 0.75);
-    --accent: #7c3aed;
-    --accent-2: #22c55e;
-    --border: rgba(255, 255, 255, 0.16);
+    --bg: #f4fbf6;
+    --card: #ffffff;
+    --card-soft: #e8f5ee;
+    --text: #1f2933;
+    --muted: #4b5563;
+    --accent: #22c55e;
+    --accent-dark: #16a34a;
+    --border: #d1fae5;
 }
 
 * {
@@ -21,26 +21,24 @@ body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--text);
     background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(124, 58, 237, 0.25), transparent 60%),
-        radial-gradient(900px 600px at 90% 30%, rgba(34, 197, 94, 0.18), transparent 55%),
-        linear-gradient(180deg, var(--bg), #070a14);
+        linear-gradient(180deg, #f0fdf4, #ecfdf5);
     min-height: 100vh;
     line-height: 1.6;
 }
 
 /* -----------------------------
-   Header + Nav
+   Header + Navigation
 ------------------------------ */
 header {
-    padding: 48px 20px 22px;
-    max-width: 980px;
+    max-width: 960px;
     margin: 0 auto;
+    padding: 48px 20px 24px;
 }
 
 h1 {
     margin: 0 0 18px;
-    font-size: clamp(28px, 3vw, 44px);
-    letter-spacing: 0.2px;
+    font-size: clamp(28px, 3vw, 42px);
+    color: #065f46;
 }
 
 nav ul {
@@ -50,38 +48,37 @@ nav ul {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    background: var(--card);
+    background: var(--card-soft);
     border: 1px solid var(--border);
     border-radius: 14px;
     width: fit-content;
-    backdrop-filter: blur(10px);
 }
 
 nav a {
     display: inline-block;
-    padding: 10px 14px;
+    padding: 10px 16px;
     border-radius: 12px;
     text-decoration: none;
-    color: var(--text);
-    border: 1px solid transparent;
-    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    color: #065f46;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.15s ease;
 }
 
 nav a:hover {
-    background: var(--card-2);
-    border-color: var(--border);
+    background: var(--accent);
+    color: white;
     transform: translateY(-1px);
 }
 
 /* -----------------------------
-   Main content
+   Main Content
 ------------------------------ */
 main {
-    max-width: 980px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 10px 20px 40px;
+    padding: 0 20px 40px;
     display: grid;
-    gap: 18px;
+    gap: 20px;
 }
 
 section,
@@ -89,15 +86,14 @@ article {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
-    padding: 22px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 h2,
 h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    color: #065f46;
 }
 
 h2 {
@@ -108,15 +104,15 @@ h2 {
 h2::after {
     content: "";
     display: block;
-    width: 70px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
     border-radius: 999px;
     margin-top: 8px;
 }
 
 p {
-    margin: 10px 0 0;
+    margin: 12px 0 0;
     color: var(--muted);
 }
 
@@ -124,10 +120,11 @@ p {
    Footer
 ------------------------------ */
 footer {
-    max-width: 980px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 20px;
-    color: var(--muted);
+    padding: 24px 20px;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    color: #065f46;
+    border-top: 1px solid var(--border);
 }
